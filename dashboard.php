@@ -114,20 +114,7 @@ if(!isset($_SERVER['HTTP_X_PJAX'])){
  <div class="modal fade" data-sound="off" id="myMapModal" tabindex="-1" role="dialog" aria-labelledby="modalAnimatedLabel" aria-hidden="true">
    <div class="modal-dialog animated bounceIn" style="width:85%;">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="resetpath close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Completed Path</h4>
-        </div>
-        <div class="modal-body">
-           <div id="busmap" style="height:400px;"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="resetpath btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div><!-- end--Modal content-->
-
+    
     </div>
   </div>
 

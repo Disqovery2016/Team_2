@@ -227,12 +227,12 @@ function not3(){notif({type:"info",msg:"<b>Click Or Drag Marker</b> Anywhere in 
     {
       $count = $count + (curstud($stud['sid']) / $stud['no_of_std']);
     }
-   $count = $count / count($albusrslt);
+   $count = ($count / count($albusrslt))*100;
     $leescount  =0;
     $grtcount =0;
    foreach ($albusrslt as $stud)
     {
-      $percent = curstud($stud['sid']) / ($stud['no_of_std'] );
+      $percent = (curstud($stud['sid']) / ($stud['no_of_std'] ))*100;
       if($percent <= 50)
       {
         echo '<a class="notif-item" href="#" data-toggle="tooltip" data-placement="bottom" title="'.$stud['name'].' has low attendance rates">

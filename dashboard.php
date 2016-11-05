@@ -86,7 +86,7 @@ if(!isset($_SERVER['HTTP_X_PJAX'])){
                                           <td>'.$stud['no_of_tech'].'</td>
                                           <td>'.curtech($stud['sid']).'</td>';
 
-                                          $percnt = (curstud($stud['sid']) / $stud['no_of_std']);
+                                          $percnt = ((curstud($stud['sid']) / $stud['no_of_std']))*100;
 
                                           if($percnt <= 50)
                                           {

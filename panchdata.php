@@ -97,7 +97,7 @@ try
      
      if(curstud($stud['sid'],$newDate) > 0)
        {
-          $count = $count / count($albusrslt);
+          $count = ($count / count($albusrslt))*100;
        }
     foreach ($albusrslt as $stud)
     {
@@ -110,7 +110,7 @@ try
                                           <td>'.$stud['no_of_tech'].'</td>
                                           <td>'.curtech($stud['sid'],$newDate).'</td>';
 
-                                         $percnt = (curstud($stud['sid']) / $stud['no_of_std']);
+                                         $percnt = (curstud($stud['sid'])*100) / $stud['no_of_std'];
 
                                           if($percnt <= 50)
                                           {

@@ -91,7 +91,7 @@ try
     {
        if(curstud($stud['sid'],$newDate) > 0)
        {
-         $count = $count + ($stud['no_of_std'] / curstud($stud['sid'],$newDate));
+         $count = $count + ( curstud($stud['sid'],$newDate) / $stud['no_of_std']);
        }
     }
      
@@ -110,14 +110,21 @@ try
                                           <td>'.$stud['no_of_tech'].'</td>
                                           <td>'.curtech($stud['sid'],$newDate).'</td>';
 
-                                          if(($stud['no_of_std'] / curstud($stud['sid'],$newDate)) > $count)
+                                         $percnt = (curstud($stud['sid']) / $stud['no_of_std']);
+
+                                          if($percnt <= 50)
                                           {
                                             echo '<td style="color:red;"><strong>Bad</strong></td>
                                                </tr>';
                                           }
+                                          elseif($percnt > 50 && $percnt < 75)
+                                          {
+                                             echo '<td style="color:Yellow;"><strong>Good</strong></td>
+                                               </tr>';
+                                          }
                                           else
                                           {
-                                            echo '<td style="color:green;"><strong>Good</strong></td>
+                                            echo '<td style="color:green;"><strong>Excellent</strong></td>
                                                </tr>';
                                           }
                                          $ct++;

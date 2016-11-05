@@ -225,23 +225,28 @@ function not3(){notif({type:"info",msg:"<b>Click Or Drag Marker</b> Anywhere in 
     $count = 0;
     foreach ($albusrslt as $stud)
     {
-      $count = $count + ($stud['no_of_std'] / curstud($stud['sid'])).'<br>';
+      $count = $count + (curstud($stud['sid']) / $stud['no_of_std']);
     }
    $count = $count / count($albusrslt);
-
-    $schoolcnt = 0;
+    $leescount  =0;
+    $grtcount =0;
    foreach ($albusrslt as $stud)
     {
-      if(($stud['no_of_std'] / curstud($stud['sid'])) > $count)
+      $percent = curstud($stud['sid']) / ($stud['no_of_std'] );
+      if($percent <= 50)
       {
-        echo '<a class="notif-item" href="table-basic.php" data-toggle="tooltip" data-placement="bottom" title="'.$stud['name'].' has low attendance rates">
+        echo '<a class="notif-item" href="#" data-toggle="tooltip" data-placement="bottom" title="'.$stud['name'].' has low attendance rates">
                                 <div class="notif-ico bg-warning">
                                     <i class="fa fa-user"></i>
                                 </div>
                                 <p class="notif-text"><span class="text-bold">'.$stud['name'].'</span> has low attendance rates</p>
                             </a>';
-                            $schoolcnt++;
+        $leescount++;
       }
+      else
+       {
+         $grtcount++;
+       }
    }
    echo '<br><br>';
 ?>
